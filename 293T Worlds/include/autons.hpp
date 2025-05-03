@@ -19,3 +19,8 @@ void measure_offsets();
 
 void redSoloAWP();
 void redSoloAWPBaker();
+void blueQUALring();
+void blueELIMSring();
+void redQUALgoal();
+void redELIMSgoal();
+void redELIMSgoalrush();

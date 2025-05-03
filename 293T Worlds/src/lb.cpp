@@ -33,6 +33,11 @@ void lbDecore6thRing(){
     currState = 2;
 }
 
+void autoLadderTouch(){
+    target = 100;
+    currState = 2;
+}
+
 void liftControl() {
     double kp = 1.4;
     double error = target - (rotationSensor.get_position()/100);

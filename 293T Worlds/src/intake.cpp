@@ -62,9 +62,9 @@ void asyncIntakeControl(void * param){
 
         //anti jam
         if(pros::millis() - lastCheckTime >= 500){
-            if((upperIntake.get_efficiency()/100 <=0.2) && (upperIntakeSpeed > 10) && (target != 27)){
+            if((upperIntake.get_efficiency()/100 <=0.1) && (upperIntakeSpeed > 10) && (target != 27)){
                 upperIntake.move(-127);
-                pros::delay(300);
+                pros::delay(200);
                 upperIntake.move(127);
                 lastCheckTime = pros::millis();
             }

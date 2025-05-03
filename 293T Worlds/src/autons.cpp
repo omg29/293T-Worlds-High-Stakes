@@ -532,15 +532,346 @@ void redSoloAWPBaker(){
   //get 4th ring
   chassis.pid_turn_relative_set(175, TURN_SPEED);
   chassis.pid_wait_quick_chain();
-  chassis.pid_drive_set(36, DRIVE_SPEED*0.8);
+  chassis.pid_drive_set(34, DRIVE_SPEED*0.8);
   chassis.pid_wait_quick_chain();
   clamp1.toggle();
   //clamp 2nd goal
   chassis.pid_turn_relative_set(115, TURN_SPEED);
   setIntake(127, 0);
   chassis.pid_wait_quick_chain();
-  chassis.pid_drive_set(-12, DRIVE_SPEED);
+  chassis.pid_drive_set(-4, DRIVE_SPEED);
   chassis.pid_wait_quick_chain();
   pros::delay(100);
   clamp1.toggle();
+}
+
+void blueQUALring(){
+  //score on alliance stake
+  chassis.pid_turn_relative_set(7, TURN_SPEED);
+  nextState();
+  setIntake(127, 127);
+  pros::delay(250);
+  chassis.pid_drive_set(5, DRIVE_SPEED);
+  pros::delay(100);
+  setIntake(0, 0);
+  lbTip();
+  pros::delay(500);
+  //clamp 1st goal
+  chassis.pid_turn_relative_set(-2, TURN_SPEED);
+  pros::delay(250);
+  chassis.pid_drive_set(-24, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(-12, DRIVE_SPEED*0.75);
+  nextState();
+  chassis.pid_wait_quick_chain();
+  pros::delay(250);
+  clamp1.toggle();
+  pros::delay(100);
+  //intake 1st and 2nd rings
+  chassis.pid_turn_relative_set(195, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(13, DRIVE_SPEED);
+  setIntake(127, 127);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(50, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(13, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  //get 3rd and 4th ring (baker)
+  chassis.pid_turn_relative_set(-13, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(-8, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(-32, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(-19, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(-90, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(18.75, DRIVE_SPEED);
+  setIntake(127, 0);
+  chassis.pid_wait_quick_chain();
+  rightDoinker.toggle();
+  pros::delay(100);
+  chassis.pid_turn_relative_set(30, TURN_SPEED);
+  pros::delay(250);
+  leftDoinker.toggle();
+  pros::delay(100);
+  chassis.pid_turn_relative_set(-30, TURN_SPEED);
+  pros::delay(250);
+  chassis.pid_drive_set(-34, DRIVE_SPEED);
+  setIntake(-127, 0);
+  chassis.pid_wait_quick_chain();
+  //intake 3rd, 4th, and 5th ring ring
+  rightDoinker.toggle();
+  leftDoinker.toggle();
+  pros::delay(50);
+  chassis.pid_turn_relative_set(-20, TURN_SPEED);
+  setIntake(127, 127);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(8, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(100, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(12, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(80, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(18, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(170, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(32, DRIVE_SPEED);
+  pros::delay(200);
+  /*
+  nextState();
+  nextState();*/
+}
+
+void blueELIMSring(){
+  //clamp 1st goal
+  chassis.pid_turn_relative_set(-2, TURN_SPEED);
+  pros::delay(250);
+  chassis.pid_drive_set(-16, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(-12, DRIVE_SPEED*0.75);
+  chassis.pid_wait_quick_chain();
+  pros::delay(250);
+  clamp1.toggle();
+  pros::delay(100);
+  //intake 1st and 2nd rings
+  chassis.pid_turn_relative_set(195, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(13, DRIVE_SPEED);
+  setIntake(127, 127);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(50, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(13, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  //get 3rd and 4th ring (baker)
+  chassis.pid_turn_relative_set(-13, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(-8, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(-32, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(-15, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(-87, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(17, DRIVE_SPEED);
+  setIntake(127, 0);
+  chassis.pid_wait_quick_chain();
+  rightDoinker.toggle();
+  pros::delay(100);
+  chassis.pid_turn_relative_set(28, TURN_SPEED);
+  pros::delay(250);
+  leftDoinker.toggle();
+  pros::delay(100);
+  chassis.pid_turn_relative_set(-28, TURN_SPEED);
+  pros::delay(250);
+  chassis.pid_drive_set(-34, DRIVE_SPEED);
+  setIntake(-127, 0);
+  chassis.pid_wait_quick_chain();
+  //intake 3rd, 4th, and 5th ring ring
+  rightDoinker.toggle();
+  leftDoinker.toggle();
+  pros::delay(50);
+  chassis.pid_turn_relative_set(-20, TURN_SPEED);
+  setIntake(127, 127);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(8, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(100, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(12, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(90, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(18, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(110, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  //rush corner
+  chassis.pid_drive_set(36, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  rightDoinker.toggle();
+  pros::delay(50);
+  chassis.pid_turn_relative_set(30, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(60, DRIVE_SPEED);
+  rightDoinker.toggle();
+  leftDoinker.toggle();
+}
+
+void redQUALgoal(){
+  //score on alliance stake
+  chassis.pid_turn_relative_set(7, TURN_SPEED);
+  nextState();
+  setIntake(127, 127);
+  pros::delay(250);
+  chassis.pid_drive_set(5, DRIVE_SPEED);
+  pros::delay(100);
+  setIntake(0, 0);
+  lbTip();
+  pros::delay(500);
+  setIntake(0, -15);
+  //clamp 1st goal
+  chassis.pid_turn_relative_set(-2, TURN_SPEED);
+  pros::delay(250);
+  setIntake(0, 0);
+  chassis.pid_drive_set(-24, DRIVE_SPEED*0.8);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(-12, DRIVE_SPEED*0.75);
+  nextState();
+  chassis.pid_wait_quick_chain();
+  pros::delay(250);
+  clamp1.toggle();
+  pros::delay(100);
+  chassis.pid_drive_set(1.75, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  //get 1st and 2nd ring (baker)
+  chassis.pid_turn_relative_set(108, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(21, DRIVE_SPEED);
+  setIntake(127, 0);
+  chassis.pid_wait_quick_chain();
+  rightDoinker.toggle();
+  pros::delay(100);
+  chassis.pid_turn_relative_set(26, TURN_SPEED*0.5);
+  pros::delay(500);
+  leftDoinker.toggle();
+  setIntake(-50, 0);
+  pros::delay(100);
+  chassis.pid_turn_relative_set(-26, TURN_SPEED);
+  pros::delay(250);
+  chassis.pid_drive_set(-35, DRIVE_SPEED);
+  setIntake(-127, 0);
+  chassis.pid_wait_quick_chain();
+  //intake 1st, 2nd, and 3rd ring
+  rightDoinker.toggle();
+  leftDoinker.toggle();
+  pros::delay(50);
+  chassis.pid_turn_relative_set(-20, TURN_SPEED);
+  setIntake(127, 127);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(8, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(100, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(12, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(80, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(18, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  //get 4th ring
+  chassis.pid_turn_relative_set(120, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(39, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  rightDoinker.toggle();
+  pros::delay(8);
+  chassis.pid_drive_set(-10, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  rightDoinker.toggle();
+  pros::delay(50);
+  //intake 4th ring and touch ladder
+  chassis.pid_turn_relative_set(15, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(15, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(-15, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(40, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(25, DRIVE_SPEED);
+}
+
+void redELIMSgoal(){
+  //clamp 1st goal
+  chassis.pid_turn_relative_set(-2, TURN_SPEED);
+  pros::delay(250);
+  chassis.pid_drive_set(-16, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(-12, DRIVE_SPEED*0.75);
+  chassis.pid_wait_quick_chain();
+  pros::delay(250);
+  clamp1.toggle();
+  setIntake(-127, 127);
+  pros::delay(100);
+  //chassis.pid_drive_set(1.75, DRIVE_SPEED);
+  //chassis.pid_wait_quick_chain();
+  //get 1st and 2nd ring (baker)
+  chassis.pid_turn_relative_set(108, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(14, DRIVE_SPEED);
+  setIntake(127, -10);
+  chassis.pid_wait_quick_chain();
+  rightDoinker.toggle();
+  pros::delay(100);
+  chassis.pid_turn_relative_set(28, TURN_SPEED*0.5);
+  pros::delay(500);
+  leftDoinker.toggle();
+  setIntake(-50, 0);
+  pros::delay(100);
+  chassis.pid_turn_relative_set(-28, TURN_SPEED);
+  pros::delay(250);
+  chassis.pid_drive_set(-35, DRIVE_SPEED);
+  setIntake(-127, 0);
+  chassis.pid_wait_quick_chain();
+  //intake 1st, 2nd, and 3rd ring
+  rightDoinker.toggle();
+  leftDoinker.toggle();
+  pros::delay(50);
+  chassis.pid_turn_relative_set(-20, TURN_SPEED);
+  setIntake(127, 127);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(8, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(100, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(12, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(80, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(12, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  //get 4th ring
+  chassis.pid_turn_relative_set(122, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(41, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  rightDoinker.toggle();
+  pros::delay(8);
+  chassis.pid_drive_set(-10, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  rightDoinker.toggle();
+  pros::delay(50);
+  //intake 4th ring
+  chassis.pid_turn_relative_set(15, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(15, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  //clear corner
+  chassis.pid_drive_set(-36, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(-90, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  chassis.pid_drive_set(24, DRIVE_SPEED);
+  leftDoinker.toggle();
+  chassis.pid_wait_quick_chain();
+  chassis.pid_turn_relative_set(90, TURN_SPEED);
+}
+
+void redELIMSgoalrush(){
+  //goal rush
+  chassis.pid_drive_set(32, DRIVE_SPEED);
+  setIntake(127, 0);
+  chassis.pid_wait_quick_chain();
+  leftDoinker.toggle();
+  pros::delay(50);
+  chassis.pid_drive_set(-10, DRIVE_SPEED);
+  chassis.pid_wait_quick_chain();
 }

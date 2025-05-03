@@ -7,6 +7,7 @@ extern void hangingFunc();
 extern void lbTip();
 extern void lbUntip();
 extern void lbDecore6thRing();
+extern void autoLadderTouch();
 
 extern int currState;
 extern int target;
